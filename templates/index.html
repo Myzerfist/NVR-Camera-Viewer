@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVR Camera Viewer</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            width: 100vw;
+            height: 100vh;
+            gap: 0;
+        }
+
+        .camera-feed {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .error-message {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <img id="cam1" src="/video_feed/0" class="camera-feed">
+        <img id="cam2" src="/video_feed/1" class="camera-feed">
+        <img id="cam3" src="/video_feed/2" class="camera-feed">
+        <img id="cam4" src="/video_feed/3" class="camera-feed">
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
