@@ -10,8 +10,8 @@ LOG_FILE = 'login_attempts.txt'
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id='211993506017-1ttik5bje1eb1tfatg52naafnauci221.apps.googleusercontent.com',
-    client_secret='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',
+    client_id='',
+    client_secret='',
     access_token_url='https://accounts.google.com/o/oauth2/token',
     access_token_params=None,
     authorize_url='https://accounts.google.com/o/oauth2/auth',
@@ -23,14 +23,14 @@ google = oauth.register(
     jwks_uri = "https://www.googleapis.com/oauth2/v3/certs"
 )
 
-ALLOWED_EMAILS = ['juanpistoris01@gmail.com', 'juanytfortnite@gmail.com']
+ALLOWED_EMAILS = ['email@gmail.com', 'email@gmail.com']
 
 # List of RTSP URLs for the cameras
 camera_urls = [
-    'rtsp://ADMIN:12345@192.168.1.120:1923/cam/realmonitor?channel=1&subtype=0',  # Camera 1 RTSP URL
-    'rtsp://ADMIN:12345@192.168.1.120:1923/cam/realmonitor?channel=2&subtype=0',  # Camera 2 RTSP URL
-    'rtsp://ADMIN:12345@192.168.1.120:1923/cam/realmonitor?channel=3&subtype=0',  # Camera 3 RTSP URL
-    'rtsp://ADMIN:12345@192.168.1.120:1923/cam/realmonitor?channel=4&subtype=0'   # Camera 4 RTSP URL
+    'rtsp://cam/live/channel',  # Camera 1 RTSP URL
+    'rtsp://cam/live/channe2',  # Camera 2 RTSP URL
+    'rtsp://cam/live/channe3',  # Camera 3 RTSP URL
+    'rtsp://cam/live/channe4'   # Camera 4 RTSP URL
 ]
 
 
@@ -111,6 +111,6 @@ def video_feed(camera_index):
     return Response(gen(camera_index),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-
+# ENTER PORT FOR YOUR NVR TCP HERE
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=37777)
